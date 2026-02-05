@@ -8,7 +8,7 @@ type CustomButtonProps = {
   className?: string;
   disabled?: boolean;
   type?: "button" | "submit" | "reset";
-  variant?: "primary" | "secondary" | "tertiary";
+  variant?: "primary" | "secondary" | "tertiary" | "form";
   href?: string;
 };
 
@@ -27,6 +27,7 @@ const CustomButton = ({
   const variantClasses = {
     primary: "bg-black-03 text-white hover:bg-black-03/80",
     secondary: "bg-white-02 text-black-01 hover:bg-white-02/80",
+    form: "bg-blue-01 text-white hover:bg-blue-01/80",
   };
 
   if (href) {

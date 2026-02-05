@@ -10,6 +10,8 @@
 
   /* Gray */
   --color-gray-01: #717182;
+  --color-gray-02: #ececf080;
+  --color-gray-03: #71718280;
 
   /* White  */
   --color-white-01: #ffffffcc; /* 80% opacity */
@@ -17,6 +19,9 @@
   --color-white-03: #ffffff99;
   --color-white-04: #e5e7eb;
   --color-white-05: #f4f4f4;
+
+  /* Blue  */
+  --color-blue-01: #2454ff;
 }
 
 /* Custom Classes */
