@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Logo from "../shared/Logo";
+import CustomButton from "../shared/CustomButton";
 
 const HERO_CARDS = [
   {
@@ -34,13 +35,17 @@ const HeroSection = () => {
       </div>
       {/* Action Buttons */}
       <div className="w-full flex flex-col sm:flex-row sm:items-center sm:justify-center gap-4 my-12">
-        <button className="py-2.5 px-4 flex items-center justify-center gap-1 font-medium text-[18px] leading-7 tracking-[-0.44px] text-white bg-black-03 rounded-full shadow-primary hover:bg-black-03/80 transition-all duration-300 ease-in-out">
+        <CustomButton className="py-2.5 px-4 font-medium text-[18px] leading-7 tracking-[-0.44px] rounded-full shadow-primary">
           Show me more
           <Image src="/icons/arrow.svg" alt="Arrow" width={16} height={16} />
-        </button>
-        <button className="py-2.5 px-4 flex items-center justify-center font-medium text-[18px] leading-7 tracking-[-0.44px] text-black-01 bg-white-02 rounded-full shadow-primary border-[0.56px] border-black-02 hover:bg-white-02/80 transition-all duration-300 ease-in-out">
+        </CustomButton>
+
+        <CustomButton
+          variant="secondary"
+          className="py-2.5 px-4 font-medium text-[18px] leading-7 tracking-[-0.44px] rounded-full shadow-primary border-[0.56px] border-black-02"
+        >
           Book a call
-        </button>
+        </CustomButton>
       </div>
       {/* Cards */}
       <div className="w-full md:max-w-[80%] mx-auto flex flex-col md:flex-row md:items-center md:justify-center gap-8">
