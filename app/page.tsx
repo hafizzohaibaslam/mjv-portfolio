@@ -4,6 +4,7 @@ import HeroSection from "@/components/landing/HeroSection";
 import Sponsors from "@/components/landing/Sponsors";
 import OurClientsSay from "@/components/landing/OurClientsSay";
 import Image from "next/image";
+import Services from "@/components/landing/Services";
 
 const LandingPage = () => {
   return (
@@ -26,6 +27,7 @@ const LandingPage = () => {
         </div>
       </div>
       <AiAgent />
+      <Services />
       <OurClientsSay />
     </div>
   );
