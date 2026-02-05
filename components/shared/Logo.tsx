@@ -8,6 +8,7 @@ type LogoProps = {
   width?: number;
   height?: number;
   className?: string;
+  imageClassName?: string;
   href?: string;
 };
 
@@ -16,20 +17,21 @@ const Logo = ({
   alt = "Logo",
   width = 100,
   height = 100,
-  className,
+  className = "",
+  imageClassName = "",
   href = "/",
 }: LogoProps) => {
-  const containerClasses = cn("cursor-pointer", className);
-  const imageClasses = cn("w-full h-full object-contain");
+  const containerClass = cn("cursor-pointer", className);
+  const imageClass = cn("w-full h-full object-contain", imageClassName);
 
   return (
-    <Link href={href} className={containerClasses}>
+    <Link href={href} className={containerClass}>
       <Image
         src={src}
         alt={alt}
         width={width}
         height={height}
-        className={imageClasses}
+        className={imageClass}
       />
     </Link>
   );

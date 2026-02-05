@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import Logo from "../shared/Logo";
+import Logo from "./Logo";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
@@ -35,7 +35,7 @@ const Header = () => {
     setIsOpen(false);
   };
   return (
-    <header className="relative w-full bg-white-01 border-b border-black-02">
+    <header className="relative w-full bg-white-01 border-b border-black-02 h-[70px]">
       <nav className="w-full max-w-[1265px] mx-auto flex items-center justify-between gap-4 px-4 py-4.5">
         <Logo className="w-[89px] h-[28px] flex justify-center items-center" />
         <div className="hidden md:flex md:items-center md:gap-8">

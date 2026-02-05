@@ -7,11 +7,14 @@
   --color-black-03: #030213;
   --color-black-04: #1e1e1e;
   --color-black-05: #00000099;
+  --color-black-06: #292929;
+  --color-black-07: #000000cc;
 
   /* Gray */
   --color-gray-01: #717182;
   --color-gray-02: #ececf080;
   --color-gray-03: #71718280;
+  --color-gray-04: #d9d9d999;
 
   /* White  */
   --color-white-01: #ffffffcc; /* 80% opacity */
@@ -39,6 +42,24 @@ body {
   }
 }
 
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
 @layer utilities {
   .text-gradient-primary {
     @apply bg-linear-to-r from-[#101828] via-[#59168B] to-[#1C398E] bg-clip-text text-transparent;
@@ -48,6 +69,14 @@ body {
   }
   .animate-scroll {
     animation: scroll 25s linear infinite;
+  }
+
+  .animate-orbit {
+    animation: orbit 40s linear infinite;
+  }
+
+  .animate-orbit-reverse {
+    animation: orbit-reverse 40s linear infinite;
   }
 
   .shadow-primary {
@@ -61,5 +90,16 @@ body {
   .shadow-services {
     box-shadow: 0px 8px 40px 0px #0000000a, 0px 2px 5px 0px #0000000d,
       0px 0px 2px 0px #00000026;
+  }
+
+  .shadow-how-we-work {
+    box-shadow: 0px 8px 40px 0px #0000000a, 0px 2px 5px 0px #0000000d,
+      0px 0px 2px 0px #00000026;
+  }
+
+  .outlined-text-our-team {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--color-blue-01);
+    color: white; /* Sets the fill color of the text */
   }
 }

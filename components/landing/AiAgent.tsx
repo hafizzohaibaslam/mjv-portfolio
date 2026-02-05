@@ -57,7 +57,7 @@ const LOGO_SIZE = 40;
 const ORBIT_RADIUS_PERCENT = 36;
 const AiAgentImageSection = () => {
   return (
-    <div className="relative w-full lg:max-w-[420px] h-[405px] lg:h-[500px] bg-white rounded-[24px] p-6 shadow-secondary">
+    <div className="relative w-full lg:max-w-[420px] h-[405px] lg:h-[500px] bg-white rounded-[24px] p-6 shadow-secondary @container [container-type:size]">
       {/* Center MJV Logo */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-[167px] h-[40px] flex items-center justify-center">
@@ -71,34 +71,38 @@ const AiAgentImageSection = () => {
         </div>
       </div>
 
-      {/* Orbiting logos */}
-      {IMAGES.map((img, i) => {
-        const count = IMAGES.length;
-        const angle = (2 * Math.PI * i) / count - Math.PI / 2;
-        const x = 50 + ORBIT_RADIUS_PERCENT * Math.cos(angle);
-        const y = 50 + ORBIT_RADIUS_PERCENT * Math.sin(angle);
-        return (
-          <div
-            key={`${img.src}-${i}`}
-            className="absolute flex items-center justify-center"
-            style={{
-              left: `${x}%`,
-              top: `${y}%`,
-              width: LOGO_SIZE,
-              height: LOGO_SIZE,
-              transform: `translate(-50%, -50%)`,
-            }}
-          >
-            <Image
-              src={img.src}
-              alt={img.alt}
-              width={LOGO_SIZE}
-              height={LOGO_SIZE}
-              className="object-contain w-full h-full"
-            />
-          </div>
-        );
-      })}
+      {/* Square orbit plane so the path is always a perfect circle at any aspect ratio */}
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(100cqw,100cqh)] h-[min(100cqw,100cqh)] animate-orbit pointer-events-none">
+        {IMAGES.map((img, i) => {
+          const count = IMAGES.length;
+          const angle = (2 * Math.PI * i) / count - Math.PI / 2;
+          const x = 50 + ORBIT_RADIUS_PERCENT * Math.cos(angle);
+          const y = 50 + ORBIT_RADIUS_PERCENT * Math.sin(angle);
+          return (
+            <div
+              key={`${img.src}-${i}`}
+              className="absolute flex items-center justify-center"
+              style={{
+                left: `${x}%`,
+                top: `${y}%`,
+                width: LOGO_SIZE,
+                height: LOGO_SIZE,
+                transform: `translate(-50%, -50%)`,
+              }}
+            >
+              <div className="flex items-center justify-center w-full h-full animate-orbit-reverse">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  width={LOGO_SIZE}
+                  height={LOGO_SIZE}
+                  className="object-contain w-full h-full"
+                />
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
