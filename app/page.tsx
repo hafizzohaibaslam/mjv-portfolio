@@ -2,6 +2,7 @@ import AiAgent from "@/components/landing/AiAgent";
 import Header from "@/components/landing/Header";
 import HeroSection from "@/components/landing/HeroSection";
 import Sponsors from "@/components/landing/Sponsors";
+import OurClientsSay from "@/components/landing/OurClientsSay";
 import Image from "next/image";
 
 const LandingPage = () => {
@@ -25,6 +26,7 @@ const LandingPage = () => {
         </div>
       </div>
       <AiAgent />
+      <OurClientsSay />
     </div>
   );
 };
