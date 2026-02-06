@@ -1,6 +1,7 @@
 import Logo from "@/components/shared/Logo";
 import Image from "next/image";
 import WhatHappeningToday from "@/components/our-craft/WhatHappeningToday";
+import SubscribeToOurCraft from "@/components/our-craft/SubscribeToOurCraft";
 
 const OurCraftPage = () => {
   return (
@@ -24,6 +25,7 @@ const OurCraftPage = () => {
         </div>
       </div>
       <WhatHappeningToday />
+      <SubscribeToOurCraft />
     </div>
   );
 };
