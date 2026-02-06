@@ -2,6 +2,8 @@ import Logo from "@/components/shared/Logo";
 import Image from "next/image";
 import WhatHappeningToday from "@/components/our-craft/WhatHappeningToday";
 import SubscribeToOurCraft from "@/components/our-craft/SubscribeToOurCraft";
+import ThinkInPublic from "@/components/our-craft/ThinkInPublic";
+import FeaturesCarousel from "@/components/our-craft/FeaturesCarousel";
 
 const OurCraftPage = () => {
   return (
@@ -25,6 +27,8 @@ const OurCraftPage = () => {
         </div>
       </div>
       <WhatHappeningToday />
+      <ThinkInPublic />
+      <FeaturesCarousel />
       <SubscribeToOurCraft />
     </div>
   );
