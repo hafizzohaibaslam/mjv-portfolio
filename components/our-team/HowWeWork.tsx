@@ -3,7 +3,7 @@ import CustomButton from "../shared/CustomButton";
 const HowWeWork = () => {
   return (
     <div className="bg-white py-[48px] lg:py-0 lg:pt-[500px] lg:pb-[24px] px-[16px] lg:px-[34px]">
-      <div className="flex flex-col gap-8 lg:gap-9 w-full lg:max-w-[1062px] mx-auto">
+      <div className="flex flex-col gap-8 lg:gap-9 w-full lg:max-w-[1100px] mx-auto">
         <h1 className="font-semibold text-[32px] lg:text-[56px] leading-[38px] lg:leading-[150%] tracking-[-1.68px] lg:tracking-[-3%] text-black-04 text-center">
           This is how we work
         </h1>
@@ -12,13 +12,13 @@ const HowWeWork = () => {
           {HOW_WE_WORK_LIST.map((item) => (
             <div
               key={item.title}
-              className="bg-white rounded-[16px] shadow-how-we-work px-[20px] flex items-center gap-1 lg:min-w-[300px]"
+              className="w-full bg-white rounded-[16px] shadow-how-we-work px-[12px] flex items-center gap-1"
             >
-              <h1 className="font-semibold text-[128px] leading-[150%] tracking-[-3%] text-black-04 text-transparent outlined-text-our-team">
+              <h1 className="font-semibold text-[128px] leading-[130%] tracking-[-3%] text-transparent outlined-text-our-team">
                 {item.id}
               </h1>
               <div className="flex flex-col">
-                <h3 className="font-semibold text-[20px] lg:text-[24px] leading-[150%] tracking-[-3%] text-black-04">
+                <h3 className="font-semibold text-[20px] leading-[150%] tracking-[-3%] text-black-04">
                   {item.title}
                 </h3>
                 <p className="font-normal text-[16px] leading-[111%] tracking-[-3%] text-black-05">
