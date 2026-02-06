@@ -10,6 +10,7 @@
   --color-black-06: #292929;
   --color-black-07: #000000cc;
   --color-black-08: #2a2a2a;
+  --color-black-09: #1e1e1ecc;
 
   /* Gray */
   --color-gray-01: #717182;
@@ -96,6 +97,12 @@ body {
   .shadow-how-we-work {
     box-shadow: 0px 8px 40px 0px #0000000a, 0px 2px 5px 0px #0000000d,
       0px 0px 2px 0px #00000026;
+  }
+
+  .shadow-our-solutions {
+    box-shadow: 0px 11px 24px 0px #0000001a, 0px 44px 44px 0px #00000017,
+      0px 98px 59px 0px #0000000d, 0px 175px 70px 0px #00000003,
+      0px 273px 76px 0px #00000000;
   }
 
   .outlined-text-our-team {
