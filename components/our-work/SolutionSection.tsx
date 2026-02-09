@@ -1,7 +1,8 @@
+"use client";
 import Image from "next/image";
-import CustomButton from "../shared/CustomButton";
 import { SolutionsType } from "@/constants/solutions";
 import { cn } from "@/lib/utils";
+import SolutionModal from "./SolutionModal";
 
 type SolutionSectionProps = {
   solution: SolutionsType;
@@ -28,19 +29,17 @@ const SolutionSection = ({ solution, inverted }: SolutionSectionProps) => {
           <p className="font-normal text-[24px] leading-[31px] lg:leading-[130%] tracking-[-0.72px] lg:tracking-[-3%] text-black-05">
             {solution.description}
           </p>
-          <CustomButton className="w-fit py-3 px-6 rounded-[32px] font-medium text-[16px] leading-[24px] tracking-0">
-            Show me more
-          </CustomButton>
+          <SolutionModal solution={solution} />
         </div>
       </div>
       {/* Image Section */}
-      <div className="w-full bg-white py-[14px] px-[35px] rounded-[16px] shadow-our-solutions">
+      <div className="w-full lg:max-w-[571px] lg:h-[380px] flex items-center justify-center bg-white py-[14px] px-[25px] rounded-[16px] shadow-our-solutions overflow-hidden">
         <Image
           src={solution.imageUrl}
           alt={solution.title}
-          width={100}
-          height={100}
-          className="w-full h-full object-contain"
+          width={solution.width}
+          height={solution.height}
+          className={cn("object-contain")}
         />
       </div>
     </div>
