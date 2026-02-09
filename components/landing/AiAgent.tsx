@@ -1,5 +1,6 @@
 import Image from "next/image";
 import CustomButton from "../shared/CustomButton";
+import { ROUTES } from "@/constants/routes";
 
 const AiAgent = () => {
   return (
@@ -24,7 +25,10 @@ const AiAgent = () => {
               environments.
             </p>
           </div>
-          <CustomButton className="py-2.5 px-4 font-medium text-[14px] leading-[20px] tracking-[-0.15px] rounded-[32px] w-fit">
+          <CustomButton
+            href={ROUTES.OUR_WORK}
+            className="py-2.5 px-4 font-medium text-[14px] leading-[20px] tracking-[-0.15px] rounded-[32px] w-fit"
+          >
             See our work
             <Image src="/icons/arrow.svg" alt="Arrow" width={16} height={16} />
           </CustomButton>
@@ -39,28 +43,87 @@ const AiAgent = () => {
 export default AiAgent;
 
 const IMAGES = [
-  { src: "/icons/landing/ai-agent/figma.svg", alt: "Figma" },
-  { src: "/icons/landing/ai-agent/chat-gpt.svg", alt: "ChatGPT" },
-  { src: "/icons/landing/ai-agent/github.svg", alt: "GitHub" },
-  { src: "/icons/landing/ai-agent/flower.svg", alt: "Flower" },
-  { src: "/icons/landing/ai-agent/grid.svg", alt: "Grid" },
-  { src: "/icons/landing/ai-agent/stripe.svg", alt: "Stripe" },
-  { src: "/icons/landing/ai-agent/apify.svg", alt: "Apify" },
-  { src: "/icons/landing/ai-agent/sales-force.svg", alt: "Salesforce" },
-  { src: "/icons/landing/ai-agent/django.svg", alt: "Django" },
-  { src: "/icons/landing/ai-agent/google-cloud.png", alt: "Google Cloud" },
-  { src: "/icons/landing/ai-agent/next-js.svg", alt: "Next.js" },
-  { src: "/icons/landing/ai-agent/react-native.svg", alt: "React Native" },
+  {
+    src: "/icons/landing/ai-agent/figma.svg",
+    alt: "Figma",
+    width: 30,
+    height: 45,
+  },
+  {
+    src: "/icons/landing/ai-agent/chat-gpt.svg",
+    alt: "ChatGPT",
+    width: 45,
+    height: 45,
+  },
+  {
+    src: "/icons/landing/ai-agent/github.svg",
+    alt: "GitHub",
+    width: 45,
+    height: 45,
+  },
+  {
+    src: "/icons/landing/ai-agent/flower.svg",
+    alt: "Flower",
+    width: 38,
+    height: 45,
+  },
+  {
+    src: "/icons/landing/ai-agent/grid.svg",
+    alt: "Grid",
+    width: 34,
+    height: 45,
+  },
+  {
+    src: "/icons/landing/ai-agent/stripe.svg",
+    alt: "Stripe",
+    width: 72,
+    height: 30,
+  },
+  {
+    src: "/icons/landing/ai-agent/apify.svg",
+    alt: "Apify",
+    width: 86,
+    height: 30,
+  },
+  {
+    src: "/icons/landing/ai-agent/sales-force.svg",
+    alt: "Salesforce",
+    width: 64,
+    height: 45,
+  },
+  {
+    src: "/icons/landing/ai-agent/django.svg",
+    alt: "Django",
+    width: 47,
+    height: 45,
+  },
+  {
+    src: "/icons/landing/ai-agent/google-cloud.png",
+    alt: "Google Cloud",
+    width: 52,
+    height: 45,
+  },
+  {
+    src: "/icons/landing/ai-agent/next-js.svg",
+    alt: "Next.js",
+    width: 45,
+    height: 45,
+  },
+  {
+    src: "/icons/landing/ai-agent/react-native.svg",
+    alt: "React Native",
+    width: 49,
+    height: 45,
+  },
 ];
 
-const LOGO_SIZE = 40;
-const ORBIT_RADIUS_PERCENT = 36;
+const ORBIT_RADIUS_PERCENT = 40;
 const AiAgentImageSection = () => {
   return (
-    <div className="relative w-full lg:max-w-[420px] h-[405px] lg:h-[500px] bg-white rounded-[24px] p-6 shadow-secondary @container [container-type:size]">
+    <div className="relative w-full lg:max-w-[420px] h-[405px] lg:h-[500px] bg-white rounded-[24px] p-6 shadow-secondary @container">
       {/* Center MJV Logo */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-[167px] h-[40px] flex items-center justify-center">
+        <div className="w-[167px] h-[50px] flex items-center justify-center">
           <Image
             src="/icons/logo.svg"
             alt="Logo"
@@ -85,8 +148,8 @@ const AiAgentImageSection = () => {
               style={{
                 left: `${x}%`,
                 top: `${y}%`,
-                width: LOGO_SIZE,
-                height: LOGO_SIZE,
+                width: `${img.width}px`,
+                height: `${img.height}px`,
                 transform: `translate(-50%, -50%)`,
               }}
             >
@@ -94,8 +157,7 @@ const AiAgentImageSection = () => {
                 <Image
                   src={img.src}
                   alt={img.alt}
-                  width={LOGO_SIZE}
-                  height={LOGO_SIZE}
+                  fill
                   className="object-contain w-full h-full"
                 />
               </div>
