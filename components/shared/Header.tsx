@@ -4,23 +4,25 @@ import Image from "next/image";
 import Logo from "./Logo";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { ROUTES } from "@/constants/routes";
+import CustomButton from "./CustomButton";
 
 const NAV_LINKS = [
   {
     label: "Services",
-    href: "/services",
+    href: ROUTES.LANDING,
   },
   {
     label: "Our Work",
-    href: "/our-work",
+    href: ROUTES.OUR_WORK,
   },
   {
     label: "About Us",
-    href: "/about-us",
+    href: ROUTES.ABOUT_US,
   },
   {
     label: "Blog",
-    href: "/blog",
+    href: ROUTES.BLOG,
   },
 ];
 
@@ -49,9 +51,12 @@ const Header = () => {
             </Link>
           ))}
         </div>
-        <button className="hidden md:block py-2 px-4 rounded-[8px] font-medium text-[14px] leading-5 tracking-[-0.15px] text-black-01 hover:bg-black-01 hover:text-white-01 transition-all duration-300 ease-in-out">
+        <CustomButton
+          variant="secondary"
+          className="hidden md:block py-2 px-4 rounded-[8px] font-medium text-[14px] leading-5 tracking-[-0.15px] text-black-01 hover:bg-black-01 hover:text-white-01"
+        >
           Book a call
-        </button>
+        </CustomButton>
         <button className="block md:hidden p-2" onClick={handleOpen}>
           <Image src="/icons/hamburger.svg" alt="Menu" width={24} height={24} />
         </button>

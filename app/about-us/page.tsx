@@ -1,11 +1,11 @@
 import CustomButton from "@/components/shared/CustomButton";
 import Logo from "@/components/shared/Logo";
 import Image from "next/image";
-import HowWeWork from "@/components/our-team/HowWeWork";
-import MeetTheTeam from "@/components/our-team/MeetTheTeam";
-import ReadyToGetStarted from "@/components/our-team/ReadyToGetStarted";
+import HowWeWork from "@/components/about-us/HowWeWork";
+import MeetTheTeam from "@/components/about-us/MeetTheTeam";
+import ReadyToGetStarted from "@/components/about-us/ReadyToGetStarted";
 
-const OurTeamPage = () => {
+const AboutUsPage = () => {
   return (
     <div>
       {/* Main Section */}
@@ -49,4 +49,4 @@ const OurTeamPage = () => {
   );
 };
 
-export default OurTeamPage;
+export default AboutUsPage;

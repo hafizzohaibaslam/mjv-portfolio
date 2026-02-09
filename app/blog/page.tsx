@@ -1,11 +1,11 @@
 import Logo from "@/components/shared/Logo";
 import Image from "next/image";
-import WhatHappeningToday from "@/components/our-craft/WhatHappeningToday";
-import SubscribeToOurCraft from "@/components/our-craft/SubscribeToOurCraft";
-import ThinkInPublic from "@/components/our-craft/ThinkInPublic";
-import FeaturesCarousel from "@/components/our-craft/FeaturesCarousel";
+import WhatHappeningToday from "@/components/blog/WhatHappeningToday";
+import SubscribeToOurCraft from "@/components/blog/SubscribeToOurCraft";
+import ThinkInPublic from "@/components/blog/ThinkInPublic";
+import FeaturesCarousel from "@/components/blog/FeaturesCarousel";
 
-const OurCraftPage = () => {
+const BlogPage = () => {
   return (
     <div>
       {/* Main Section */}
@@ -34,4 +34,4 @@ const OurCraftPage = () => {
   );
 };
 
-export default OurCraftPage;
+export default BlogPage;

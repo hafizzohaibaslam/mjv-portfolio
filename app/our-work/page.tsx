@@ -2,11 +2,11 @@ import Sponsors from "@/components/shared/Sponsors";
 import CustomButton from "@/components/shared/CustomButton";
 import Logo from "@/components/shared/Logo";
 import Image from "next/image";
-import SolutionList from "@/components/our-solutions/SolutionList";
-import SingleReview from "@/components/our-solutions/SingleReview";
-import ChooseYourIndustry from "@/components/our-solutions/ChooseYourIndustry";
+import SolutionList from "@/components/our-work/SolutionList";
+import SingleReview from "@/components/our-work/SingleReview";
+import ChooseYourIndustry from "@/components/our-work/ChooseYourIndustry";
 
-const OurSolutionsPage = () => {
+const OurWorkPage = () => {
   return (
     <div>
       {/* Main Section */}
@@ -65,4 +65,4 @@ const OurSolutionsPage = () => {
   );
 };
 
-export default OurSolutionsPage;
+export default OurWorkPage;

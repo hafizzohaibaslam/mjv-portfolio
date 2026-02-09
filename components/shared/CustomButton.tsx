@@ -19,7 +19,7 @@ const CustomButton = ({
   disabled = false,
   type = "button",
   variant = "primary",
-  href = "",
+  href,
 }: CustomButtonProps) => {
   const baseClass =
     "cursor-pointer border-none flex items-center justify-center gap-1 transition-all duration-300 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed";
@@ -30,7 +30,7 @@ const CustomButton = ({
     form: "bg-blue-01 text-white hover:bg-blue-01/80",
   };
 
-  if (href) {
+  if (href && typeof href === "string") {
     return (
       <Link
         href={href}

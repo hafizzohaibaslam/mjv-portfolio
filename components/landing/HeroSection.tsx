@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Logo from "../shared/Logo";
 import CustomButton from "../shared/CustomButton";
+import { ROUTES } from "@/constants/routes";
 
 const HERO_CARDS = [
   {
@@ -19,7 +20,7 @@ const HERO_CARDS = [
 
 const HeroSection = () => {
   return (
-    <div className="flex-1 w-full max-w-[896px] mx-auto px-4 flex flex-col items-center">
+    <div className="flex-1 w-full max-w-[910px] mx-auto px-4 flex flex-col items-center">
       <Logo className="w-[89px] h-[89px] flex justify-center items-center" />
       <div className="w-full flex flex-col gap-6">
         <h1 className="w-full md:max-w-[90%] mx-auto font-semibold text-[36px] md:text-[64px] leading-[40px] md:leading-[72px] tracking-[0.12px] text-gradient-primary text-center">
@@ -35,20 +36,24 @@ const HeroSection = () => {
       </div>
       {/* Action Buttons */}
       <div className="w-full flex flex-col sm:flex-row sm:items-center sm:justify-center gap-4 my-12">
-        <CustomButton className="py-2.5 px-4 font-medium text-[18px] leading-7 tracking-[-0.44px] rounded-full shadow-primary">
+        <CustomButton
+          href={ROUTES.OUR_WORK}
+          className="py-2.5 px-4 font-medium text-[18px] leading-7 tracking-[-0.44px] rounded-full shadow-primary"
+        >
           Show me more
           <Image src="/icons/arrow.svg" alt="Arrow" width={16} height={16} />
         </CustomButton>
 
         <CustomButton
           variant="secondary"
+          href={ROUTES.ABOUT_US}
           className="py-2.5 px-4 font-medium text-[18px] leading-7 tracking-[-0.44px] rounded-full shadow-primary border-[0.56px] border-black-02"
         >
           Book a call
         </CustomButton>
       </div>
       {/* Cards */}
-      <div className="w-full md:max-w-[80%] mx-auto flex flex-col md:flex-row md:items-center md:justify-center gap-8">
+      <div className="lg:mb-[78px] w-full md:max-w-[80%] mx-auto flex flex-col md:flex-row md:items-center md:justify-center gap-8">
         {HERO_CARDS.map((card) => (
           <HeroCard key={card.title} {...card} />
         ))}

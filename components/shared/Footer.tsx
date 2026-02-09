@@ -1,13 +1,22 @@
 import Logo from "./Logo";
+import { ROUTES } from "@/constants/routes";
+import Link from "next/link";
 
 const FOOTER_SECTIONS = {
   services: {
     title: "Services",
-    items: ["AI Agents", "High Fidelity Designs", "Custom Apps"],
+    items: [
+      { label: "AI Agents", href: "#" },
+      { label: "High Fidelity Designs", href: "#" },
+      { label: "Custom Apps", href: "#" },
+    ],
   },
   company: {
     title: "Company",
-    items: ["About Us", "Blog", "Contact Us"],
+    items: [
+      { label: "About Us", href: ROUTES.ABOUT_US },
+      { label: "Blog", href: ROUTES.BLOG },
+    ],
   },
 };
 
@@ -34,14 +43,27 @@ const Footer = () => {
                 {section.title}
               </h1>
               <div className="flex flex-col gap-2">
-                {section.items.map((item) => (
-                  <span
-                    key={item}
-                    className="font-normal text-[14px] leading-[20px] tracking-[-0.15px] text-white"
-                  >
-                    {item}
-                  </span>
-                ))}
+                {section.items.map((item) => {
+                  if (key === "company") {
+                    return (
+                      <Link
+                        href={item?.href}
+                        key={item?.href}
+                        className="font-normal text-[14px] leading-[20px] tracking-[-0.15px] text-white"
+                      >
+                        {item?.label}
+                      </Link>
+                    );
+                  }
+                  return (
+                    <span
+                      key={item?.href}
+                      className="font-normal text-[14px] leading-[20px] tracking-[-0.15px] text-white"
+                    >
+                      {item?.label}
+                    </span>
+                  );
+                })}
               </div>
             </div>
           ))}
