@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 const TEAM_MEMBERS = [
   {
@@ -125,22 +124,16 @@ const MeetTheTeam = () => {
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-x-[73px] lg:gap-y-[19px]">
           {TEAM_MEMBERS.map((member) => (
-            <div
-              key={member.id}
-              className="bg-white rounded-[16px] shadow-how-we-work"
-            >
-              <div className="flex justify-center items-center rounded-tl-[16px] rounded-tr-[16px]">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  width={100}
-                  height={100}
-                  className="w-full h-full object-contain rounded-tl-[16px] rounded-tr-[16px]"
-                />
-              </div>
-              {/* Content */}
-              <div className="p-4 flex items-start">
-                <div className="flex-1 flex flex-col gap-1">
+            <div key={member.id} className="flex flex-col">
+              <Image
+                src={member.image}
+                alt={member.name}
+                width={250}
+                height={250}
+                className="w-[250px] h-[250px] object-cover rounded-[16px] grayscale"
+              />
+              <div className="flex items-start gap-2 pt-3">
+                <div className="flex-1 flex flex-col gap-1 min-w-0">
                   <h3 className="font-semibold text-[18px] lg:text-[24px] leading-[27px] lg:leading-[150%] tracking-[-0.72px] lg:tracking-[-3%] text-black">
                     {member.name}
                   </h3>
@@ -153,6 +146,7 @@ const MeetTheTeam = () => {
                   alt="LinkedIn"
                   width={29}
                   height={29}
+                  className="flex-shrink-0"
                 />
               </div>
             </div>
