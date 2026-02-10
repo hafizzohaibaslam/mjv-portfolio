@@ -47,7 +47,7 @@ const HeroSection = () => {
         <CustomButton
           variant="secondary"
           href={ROUTES.ABOUT_US}
-          className="py-2.5 px-4 font-medium text-[18px] leading-7 tracking-[-0.44px] rounded-full shadow-primary border-[0.56px] border-black-02"
+          className="py-[10px] px-4 font-medium text-[18px] leading-7 tracking-[-0.44px] rounded-full shadow-primary border-[0.56px] border-black-02"
         >
           Book a call
         </CustomButton>

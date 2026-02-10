@@ -2,7 +2,10 @@ import Image from "next/image";
 
 const Services = () => {
   return (
-    <div className="flex flex-col gap-8 lg:gap-7 px-[34px] pt-[47px] lg:pt-[40px] pb-[47px] lg:pb-[65px] bg-white">
+    <div
+      id="services"
+      className="flex flex-col gap-8 lg:gap-7 px-[34px] pt-[47px] lg:pt-[40px] pb-[47px] lg:pb-[65px] bg-white"
+    >
       {/* Title */}
       <h1 className="font-semibold text-[40px] lg:text-[56px] leading-[60px] lg:leading-[150%] tracking-[-1.68px] lg:tracking-[-3%] text-black-04 text-center">
         Services
