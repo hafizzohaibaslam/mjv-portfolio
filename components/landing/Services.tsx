@@ -1,4 +1,5 @@
 import Image from "next/image";
+import CustomButton from "../shared/CustomButton";
 
 const Services = () => {
   return (
@@ -48,6 +49,9 @@ const Services = () => {
             </div>
           ))}
         </div>
+        <CustomButton className="w-fit mx-auto py-3 px-6 rounded-[32px] font-medium text-[16px] leading-[24px] tracking-0">
+          Show me more
+        </CustomButton>
       </div>
     </div>
   );
