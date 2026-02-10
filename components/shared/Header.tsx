@@ -6,6 +6,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { ROUTES } from "@/constants/routes";
 import CustomButton from "./CustomButton";
+import { X } from "lucide-react";
 
 const NAV_LINKS = [
   {
@@ -65,16 +66,42 @@ const Header = () => {
       <div
         className={cn(
           "fixed inset-0 bg-white-01/50 backdrop-blur-sm z-50 translate-x-full transition-all duration-300 ease-in-out md:translate-x-full",
-          isOpen && "translate-x-0"
+          isOpen && "translate-x-0",
         )}
       >
-        <div className="relative bg-white w-full h-full">
-          <button
-            onClick={handleClose}
-            className="absolute top-4 right-4 bg-white p-2 rounded-full shadow-md flex items-center justify-center"
+        <div className="relative bg-white w-full h-full flex flex-col gap-4 px-6 py-6">
+          {/* Header with logo and close button */}
+          <div className="flex items-center justify-between">
+            <Logo className="w-[89px] h-[28px] flex justify-center items-center relative " />
+            <button
+              onClick={handleClose}
+              className="bg-white p-2 rounded-full shadow-md flex items-center justify-center"
+            >
+              <X />
+            </button>
+          </div>
+
+          {/* Navigation links */}
+          <nav className="flex flex-col gap-6 border-2 border-green-500">
+            {NAV_LINKS.map((link) => (
+              <Link
+                href={link.href}
+                key={link.href}
+                onClick={handleClose}
+                className="font-medium text-[16px] leading-6 tracking-[-0.31px] text-gray-01 hover:text-black-01 transition-all duration-300 hover:underline"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Book a call button */}
+          <CustomButton
+            variant="secondary"
+            className="w-full py-3 px-4 rounded-[8px] font-medium text-[14px] leading-5 tracking-[-0.15px] text-black-01 hover:bg-black-01 hover:text-white-01"
           >
-            X
-          </button>
+            Book a call
+          </CustomButton>
         </div>
       </div>
     </header>
