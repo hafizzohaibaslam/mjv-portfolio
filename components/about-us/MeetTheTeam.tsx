@@ -122,17 +122,17 @@ const MeetTheTeam = () => {
         <h1 className="font-semibold text-[32px] lg:text-[56px] leading-[38px] lg:leading-[150%] tracking-[-1.68px] lg:tracking-[-3%] text-black-04 text-center">
           Meet the team
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-x-[73px] lg:gap-y-[19px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-x-[73px] lg:gap-y-[19px]">
           {TEAM_MEMBERS.map((member) => (
-            <div key={member.id} className="flex flex-col">
+            <div key={member.id} className="flex flex-col w-full">
               <Image
                 src={member.image}
                 alt={member.name}
                 width={250}
                 height={250}
-                className="w-[250px] h-[250px] object-cover rounded-[16px] grayscale"
+                className="w-full aspect-square object-cover rounded-[16px] grayscale lg:w-[250px] lg:h-[250px]"
               />
-              <div className="flex items-start gap-2 pt-3">
+              <div className="flex items-start gap-2 pt-3 w-full">
                 <div className="flex-1 flex flex-col gap-1 min-w-0">
                   <h3 className="font-semibold text-[18px] lg:text-[24px] leading-[27px] lg:leading-[150%] tracking-[-0.72px] lg:tracking-[-3%] text-black">
                     {member.name}
